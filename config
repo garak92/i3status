@@ -9,6 +9,7 @@ general {
 		color_bad = '#ba5e57'
 }
 
+order += "read_file uptime"
 order += "cpu_usage"
 order += "memory"
 order += "disk /home"
@@ -17,6 +18,13 @@ order += "wireless wlo1"
 order += "volume master"
 order += "battery 1"
 order += "tztime local"
+
+read_file uptime {
+	format = "<span background='#4935a5'>  %content </span>"
+        path = "/proc/version"
+	max_characters = 18 
+}
+
 
 cpu_usage {
         format = "<span background='#bf616a'> CPU: %usage </span>"
