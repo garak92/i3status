@@ -9,7 +9,7 @@ general {
 		color_bad = '#ba5e57'
 }
 
-order += "cpu_temperature 0"
+order += "cpu_usage"
 order += "memory"
 order += "disk /home"
 order += "ethernet enp1s0"
@@ -18,32 +18,31 @@ order += "volume master"
 order += "battery 1"
 order += "tztime local"
 
-cpu_temperature 0 {
-        format = "<span background='#bf616a'> CPU: %degrees °C </span>"
-        path = "/sys/class/thermal/thermal_zone0/temp"
+cpu_usage {
+        format = "<span background='#bf616a'> CPU: %usage </span>"
 }
 
 memory {
-    format= "<span background='#800080'> Mem:  %used </span>"
+    format= "<span background='#800080'>   %used </span>"
 }
 
 disk "/home" {
-        format = "<span background='#a1d569'> 💽 %used </span>"
+        format = "<span background='#a1d569'>  %used </span>"
 }
 
 ethernet enp1s0 {
-        format_up = "<span background='#88c0d0'> Eth: %ip </span>"
-        format_down = "<span background='#88c0d0'> Eth: Disconnected </span>"
+        format_up = "<span background='#88c0d0'>  %ip </span>"
+        format_down = "<span background='#88c0d0'>  Disconnected </span>"
 }
 
 wireless wlo1 {
-        format_up = "<span background='#b47ead'> 📶 %essid %quality </span>"
-        format_down = "<span background='#b48ead'> 📶 disconnected </span>"
+        format_up = "<span background='#b47ead'>   %essid %quality </span>"
+        format_down = "<span background='#b48ead'>   disconnected </span>"
 }
 
 volume master {
-        format = "<span background='#30cbec'> 🔈 %volume </span>"
-        format_muted = "<span background='#30cbec'> 🔇 Muted </span>"
+        format = "<span background='#30cbec'>  %volume </span>"
+        format_muted = "<span background='#30cbec'>  Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
@@ -51,19 +50,19 @@ volume master {
 
 battery 1 {
 	last_full_capacity = true
-        format = "<span background='#871818'> 🔋 %status %percentage </span>"
+        format = "<span background='#871818'> %status %percentage </span>"
         format_down = "No Battery"
-        status_chr = "Charging"
+        status_chr = "⚡ Charging..."
         status_bat = "Battery"
         status_unk = "Unknown"
-        status_full = "Charged"
+        status_full = " "
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
 }
 
 tztime local {
 		format = "<span background='#81a1c1'> %time </span>"
-		format_time = "📅 %a %-d %b %H:%M"
+		format_time = " %a %-d %b %H:%M"
 }
 
 
