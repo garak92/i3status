@@ -35,22 +35,22 @@ memory {
 }
 
 disk "/home" {
-        format = "<span background='#a1d569'>  %used </span>"
+        format = "<span background='#7da553'>  %used </span>"
 }
 
 ethernet enp1s0 {
-        format_up = "<span background='#88c0d0'>  %ip </span>"
-        format_down = "<span background='#88c0d0'>  Disconnected </span>"
+        format_up = "<span background='#3a96b0'>  %ip </span>"
+        format_down = "<span background='#3a96b0'>  Disconnected </span>"
 }
 
 wireless wlo1 {
-        format_up = "<span background='#b47ead'>   %essid %quality </span>"
-        format_down = "<span background='#b48ead'>   disconnected </span>"
+        format_up = "<span background='#7c7c7c'>   %essid %quality </span>"
+        format_down = "<span background='#7c7c7c'>   disconnected </span>"
 }
 
 volume master {
-        format = "<span background='#30cbec'>  %volume </span>"
-        format_muted = "<span background='#30cbec'>  Muted </span>"
+        format = "<span background='#a5880f'>  %volume </span>"
+        format_muted = "<span background='#a5880f'>  Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
@@ -69,7 +69,7 @@ battery 1 {
 }
 
 tztime local {
-		format = "<span background='#81a1c1'> %time </span>"
+		format = "<span background='#338d87'> %time </span>"
 		format_time = " %a %-d %b %H:%M"
 }
 
