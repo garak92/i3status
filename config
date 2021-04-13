@@ -20,37 +20,37 @@ order += "battery 1"
 order += "tztime local"
 
 read_file uptime {
-	format = "<span background='#4935a5'>  %content </span>"
+	format = "<span foreground='#d49e4b'>  %content </span>"
         path = "/proc/version"
 	max_characters = 18 
 }
 
 
 cpu_usage {
-        format = "<span background='#bf616a'> CPU: %usage </span>"
+        format = "<span foreground='#d49e4b'> CPU: %usage </span>"
 }
 
 memory {
-    format= "<span background='#800080'>   %used </span>"
+    format= "<span foreground='#d49e4b'>   %used </span>"
 }
 
 disk "/home" {
-        format = "<span background='#7da553'>  %used </span>"
+        format = "<span foreground='#d49e4b'>  %used </span>"
 }
 
 ethernet enp1s0 {
-        format_up = "<span background='#3a96b0'>  %ip </span>"
-        format_down = "<span background='#3a96b0'>  Disconnected </span>"
+        format_up = "<span foreground='#d49e4b'>  %ip </span>"
+        format_down = "<span foreground='#d49e4b'>  Disconnected </span>"
 }
 
 wireless wlo1 {
-        format_up = "<span background='#7c7c7c'>   %essid %quality </span>"
-        format_down = "<span background='#7c7c7c'>   disconnected </span>"
+        format_up = "<span foreground='#d49e4b'>   %essid %quality </span>"
+        format_down = "<span foreground='#d49e4b'>   disconnected </span>"
 }
 
 volume master {
-        format = "<span background='#a5880f'>  %volume </span>"
-        format_muted = "<span background='#a5880f'>  Muted </span>"
+        format = "<span foreground='#d49e4b'>  %volume </span>"
+        format_muted = "<span foreground='#d49e4b'>  Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
@@ -58,7 +58,7 @@ volume master {
 
 battery 1 {
 	last_full_capacity = true
-        format = "<span background='#871818'> %status %percentage </span>"
+        format = "<span foreground='#d49e4b'> %status %percentage </span>"
         format_down = "No Battery"
         status_chr = "⚡ Charging..."
         status_bat = "Battery"
@@ -69,7 +69,7 @@ battery 1 {
 }
 
 tztime local {
-		format = "<span background='#338d87'> %time </span>"
+		format = "<span foreground='#d49e4b'> %time </span>"
 		format_time = " %a %-d %b %H:%M"
 }
 
